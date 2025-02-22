@@ -1,0 +1,13 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero {
+    background-image: url('https://example.com/your-hero-image.jpg'); /* Replace with your hero image */
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
