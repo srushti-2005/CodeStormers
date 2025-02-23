@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Comedy Scene Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-800">ComedyHub</div>
+                <div class="space-x-4">
+                    <a class="text-gray-600 hover:text-gray-800" href="#">Home</a>
+                    <a class="text-gray-600 hover:text-gray-800" href="#">Events</a>
+                    <a class="text-gray-600 hover:text-gray-800" href="#">Artists</a>
+                    <a class="text-gray-600 hover:text-gray-800" href="#">Venues</a>
+                    <a class="text-gray-600 hover:text-gray-800" href="#">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 py-8 flex-1">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Sidebar - Filters -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-xl font-bold mb-4">Filters</h2>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Date</label>
+                        <input class="w-full mt-2 p-2 border rounded-lg" id="filter-date" type="date"/>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Location</label>
+                        <input class="w-full mt-2 p-2 border rounded-lg" id="filter-location" placeholder="Enter location" type="text"/>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Genre</label>
+                        <select class="w-full mt-2 p-2 border rounded-lg" id="filter-genre">
+                            <option value="">All</option>
+                            <option value="Stand-up">Stand-up</option>
+                            <option value="Improv">Improv</option>
+                            <option value="Sketch">Sketch</option>
+                            <option value="Musical Comedy">Musical Comedy</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Artist</label>
+                        <input class="w-full mt-2 p-2 border rounded-lg" id="filter-artist" placeholder="Enter artist name" type="text"/>
+                    </div>
+                    <button class="w-full bg-blue-500 text-white py-2 rounded-lg" id="apply-filters">Apply Filters</button>
+                </div>
+
+                <!-- Event Listings -->
+                <div class="col-span-2">
+                    <h2 class="text-2xl font-bold mb-4">Upcoming Events</h2>
+                    <div class="space-y-4" id="event-list">
+                        <!-- Event Items -->
+                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center event-item" data-artist="Samay Raina" data-date="2025-02-23" data-genre="Stand-up" data-location="Mumbai">
+                            <img alt="Image of Samay Raina performing stand-up comedy" class="w-24 h-24 rounded-lg mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/8ZHA80D7xjB8IVPwqaqIizudS9dXGpRdWD6gxasjR2Q.jpg" width="100"/>
+                            <div>
+                                <h3 class="text-xl font-bold">Samay Raina</h3>
+                                <p class="text-gray-600">Location: The Comedy Store, Mumbai</p>
+                                <p class="text-gray-600">Date: 2025-02-20</p>
+                                <p class="text-gray-600">Genre: Stand-up</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center event-item" data-artist="Kenny Sebastian" data-date="2025-02-24" data-genre="Stand-up" data-location="Pune">
+                            <img alt="Image of Kenny Sebastian performing stand-up comedy" class="w-24 h-24 rounded-lg mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/M5jyL6SUqKdgs3mF_Gdv4VG7Vtbk5nv_SSygQ5Pjc7E.jpg" width="100"/>
+                            <div>
+                                <h3 class="text-xl font-bold">Stand-up Comedy with Kenny Sebastian</h3>
+                                <p class="text-gray-600">Location: The Laugh Club, Pune</p>
+                                <p class="text-gray-600">Date: 2025-02-24</p>
+                                <p class="text-gray-600">Genre: Stand-up</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center event-item" data-artist="Kanan Gill" data-date="2025-02-25" data-genre="Stand-up" data-location="Nagpur">
+                            <img alt="Image of Kanan Gill performing stand-up comedy" class="w-24 h-24 rounded-lg mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/mMryJdYWoIRBxqbRKu-AQYZ0ij8vXhwts3JNi4ykUQ8.jpg" width="100"/>
+                            <div>
+                                <h3 class="text-xl font-bold">Stand-up Comedy with Kanan Gill</h3>
+                                <p class="text-gray-600">Location: The Comedy Club, Nagpur</p>
+                                <p class="text-gray-600">Date: 2025-02-25</p>
+                                <p class="text-gray-600">Genre: Stand-up</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center event-item" data-artist="Aditi Mittal" data-date="2025-02-26" data-genre="Stand-up" data-location="Hyderabad">
+                            <img alt="Image of Aditi Mittal performing stand-up comedy" class="w-24 h-24 rounded-lg mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/GmTSP1B7MCrk6Gj-H2L1NtSFn38JVcN1WpkzhuWrEb8.jpg" width="100"/>
+                            <div>
+                                <h3 class="text-xl font-bold">Stand-up Comedy with Aditi Mittal</h3>
+                                <p class="text-gray-600">Location: The Laugh Factory, Hyderabad</p>
+                                <p class="text-gray-600">Date: 2025-02-26</p>
+                                <p class="text-gray-600">Genre: Stand-up</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center event-item" data-artist="Vir Das" data-date="2025-02-27" data-genre="Stand-up" data-location="Mumbai">
+                            <img alt="Image of Vir Das performing stand-up comedy" class="w-24 h-24 rounded-lg mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/zyud0j4UVRfK_R0VoW8gPInf0SnGLtQ2m6jcO8RU9l8.jpg" width="100"/>
+                            <div>
+                                <h3 class="text-xl font-bold">Stand-up Comedy with Vir Das</h3>
+                                <p class="text-gray-600">Location: The Comedy Store, Mumbai</p>
+                                <p class="text-gray-600">Date: 2025-02-27</p>
+                                <p class="text-gray-600">Genre: Stand-up</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center event-item" data-artist="Zakir Khan" data-date="2025-02-28" data-genre="Stand-up" data-location="Pune">
+                            <img alt="Image of Zakir Khan performing stand-up comedy" class="w-24 h-24 rounded-lg mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/FEH4da5DO_c-7uTGfTaCFihX8J3toWGQQbEndigue3w.jpg" width="100"/>
+                            <div>
+                                <h3 class="text-xl font-bold">Stand-up Comedy with Zakir Khan</h3>
+                                <p class="text-gray-600">Location: The Laugh Club, Pune</p>
+                                <p class="text-gray-600">Date: 2025-02-28</p>
+                                <p class="text-gray-600">Genre: Stand-up</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to filter events
+        document.getElementById('apply-filters').addEventListener('click', function() {
+            const dateFilter = document.getElementById('filter-date').value;
+            const locationFilter = document.getElementById('filter-location').value.toLowerCase();
+            const genreFilter = document.getElementById('filter-genre').value;
+            const artistFilter = document.getElementById('filter-artist').value.toLowerCase();
+
+            const events = document.querySelectorAll('.event-item');
+
+            let hasVisibleEvents = false;
+
+            events.forEach(event => {
+                const eventDate = event.getAttribute('data-date');
+                const eventLocation = event.getAttribute('data-location').toLowerCase();
+                const eventGenre = event.getAttribute('data-genre');
+                const eventArtist = event.getAttribute('data-artist').toLowerCase();
+
+                const showEvent =
+                    (!dateFilter || eventDate === dateFilter) &&
+                    (!locationFilter || eventLocation.includes(locationFilter)) &&
+                    (!genreFilter || eventGenre === genreFilter) &&
+                    (!artistFilter || eventArtist.includes(artistFilter));
+
+                if (showEvent) {
+                    event.style.display = 'flex';
+                    hasVisibleEvents = true;
+                } else {
+                    event.style.display = 'none';
+                }
+            });
+
+            // If no events match the filters, show all comedy events
+            if (!hasVisibleEvents) {
+                events.forEach(event => {
+                    if (event.getAttribute('data-genre') === 'Stand-up') {
+                        event.style.display = 'flex';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

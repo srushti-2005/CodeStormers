@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Laughling </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff; /* White */
+      color: #031634; /* Tangaroa */
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #ffffff; /* White */
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .login-container h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #031634; /* Tangaroa */
+    }
+
+    .login-container p {
+      font-size: 1em;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .login-options {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .login-options button {
+      background: #DEAA88; /* Tumbleweed */
+      color: #031634; /* Tangaroa */
+      border: none;
+      padding: 15px 20px;
+      font-size: 1.1em;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .login-options button:hover {
+      background: #031634; /* Tangaroa */
+      color: #ffffff; /* White */
+    }
+
+    .login-options button i {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Welcome to the Laughlings!</h2>
+    <p>Please select your role to continue:</p>
+    <div class="login-options">
+      <a href='artistmain.html'">
+        <button>Comedian Login</button>
+    </a>
+      <button onclick="window.location.href='venue-owner-login.html'">
+        <i class="fas fa-building"></i> Venue Owner Login
+      </button>
+    </div>
+  </div>
+
+  <!-- Font Awesome for Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>
