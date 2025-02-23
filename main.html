@@ -1,84 +1,134 @@
-<html lang="en"> 
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   ComedyHub
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
- </head> <body class="font-roboto bg-gray-100">
-  <header class="bg-white shadow-md">
-   <div class="container mx-auto flex justify-between items-center py-4 px-6">
-    <div class="text-2xl font-bold text-gray-800">
-     ComedyHub
-    </div>
-    <nav class="flex space-x-4">
-     <a class="text-gray-600 hover:text-gray-800" href="#">
-      Contact
-     </a>
-     <a class="text-gray-600 hover:text-gray-800" href="#">
-      Sign In
-     </a>
-    </nav>
-   </div>
-  </header>
-  <main class="container mx-auto mt-5 px-50">
-   <img alt="A vibrant comedy scene with a comedian performing on stage and audience laughing" class="w-full rounded-lg shadow-md mb-8" height="300" src="https://storage.googleapis.com/a1aa/image/jnbv2fAbxdENVTakwC4MIIuAuA4voIdBAfZ4PX5JupM.jpg" width="100px"/>
-   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <a href="audiencelogin.html"><div class="bg-white p-6 rounded-lg shadow-md transform transition duration-500 hover:scale-105">
-     <img alt="Audience enjoying a comedy show" class="w-full h-40 object-cover rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/JuOp3xfBvgNsSfQFjDFAI227nQAqynELQBvgHOjwQUA.jpg" width="300"/>
-     <h2 class="text-xl font-bold mb-2">
-      Audience
-     </h2>
-     <p class="text-gray-600">
-      Join the audience and enjoy the best comedy shows live.
-     </p>
-    </div></a>
-    <a href="audiencelogin.html"><div class="bg-white p-6 rounded-lg shadow-md transform transition duration-500 hover:scale-105"></a>
-     <img alt="Comedian performing on stage" class="w-full h-40 object-cover rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/pZ3l6Zv-KmDHxSt_RMxD0BH5X6Y7zB1dDGVp1S8g7uA.jpg" width="300"/>
-     <h2 class="text-xl font-bold mb-2">
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="getstarted.html"><div class="bg-white p-6 rounded-lg shadow-md transform transition duration-500 hover:scale-105">
-             <img alt="Audience enjoying a comedy show" class="w-full h-40 object-cover rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/JuOp3xfBvgNsSfQFjDFAI227nQAqynELQBvgHOjwQUA.jpg" width="300"/>
-             <h2 class="text-xl font-bold mb-2">
-              Comedian/Venue
-             </h2>
-             <p class="text-gray-600">
-                Perform and showcase your talent to a live audience / Find the perfect venue for your next comedy show.
-             </p>
-            </div></a>
-            <a href="getstarted.html"><div class="bg-white p-6 rounded-lg shadow-md transform transition duration-500 hover:scale-105"></a>
-             <img alt="Comedian performing on stage" class="w-full h-40 object-cover rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/pZ3l6Zv-KmDHxSt_RMxD0BH5X6Y7zB1dDGVp1S8g7uA.jpg" width="300"/>
-             <h2 class="text-xl font-bold mb-2">
-
-
-      <!--Comedian/Venue
-     </h2>
-     <p class="text-gray-600">
-      Perform and showcase your talent to a live audience / Find the perfect venue for your next comedy show.
-     
-     <a href="getstarted.html"><div class="bg-white p-6 rounded-lg shadow-md transform transition duration-500 hover:scale-105"></a>
-     </p>
-    </div></a>
-   <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-500 hover:scale-105">
-     <img alt="Venue setup for a comedy show" class="w-full h-40 object-cover rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/YkQ4aMdy6Jo5mNYMZjv3qfXEarYRbTbrT1atlR2RMT8.jpg" width="300"/>
-     <h2 class="text-xl font-bold mb-2">
-      Venue
-     </h2>
-     <p class="text-gray-600">
-      Find the perfect venue for your next comedy show.
-     </p>-->
-    </div>
-   </div>
-  </main>
-  <footer class="bg-white shadow-md mt-8">
-   <div class="container mx-auto py-4 px-6 text-center text-gray-600">
-    © 2025 ComedyHub. All rights reserved.
-   </div>
-  </footer>
- </body>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ComedyHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        .carousel-open:checked + .carousel-item {
+            position: static;
+            opacity: 100;
+        }
+        .carousel-item {
+            transition: opacity 0.6s ease-out;
+        }
+        #carousel-1:checked ~ .control-1,
+        #carousel-2:checked ~ .control-2,
+        #carousel-3:checked ~ .control-3 {
+            display: block;
+        }
+        .carousel-indicators {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+        #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+            color: #000;
+        }
+    </style>
+</head>
+<body class="font-roboto bg-gray-100">
+    <!--<header class="bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="text-2xl font-bold text-gray-800"></div>
+            <nav class="flex space-x-4">
+                <a class="text-gray-600 hover:text-gray-800" href="#">Contact</a>
+                <a class="text-gray-600 hover:text-gray-800" href="#">Sign In</a>
+            </nav>
+        </div>
+    </header>-->
+    <main class="container mx-auto mt-5 px-6">
+        <!-- Carousel -->
+        <div class="carousel relative shadow-2xl bg-white rounded-lg mb-8">
+            <div class="carousel-inner relative overflow-hidden w-full">
+                <!--Slide 1-->
+                <input aria-hidden="true" checked="checked" class="carousel-open" hidden="" id="carousel-1" name="carousel" type="radio"/>
+                <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                    <img alt="Comedy show with a comedian on stage and audience laughing" class="w-full h-full object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/yllTWJ157Q_oYJzcf0trJhMt0cVY2tUZC2pBZV4-UZ0.jpg" width="800"/>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white">
+                        <h2 class="text-4xl font-bold">LaughLink</h2>
+                        <p class="text-xl mt-2">Laugh more, search less</p>
+                    </div>
+                </div>
+                <label class="control-1 absolute right-0 mr-2 cursor-pointer hidden text-3xl font-bold text-black hover:text-white" for="carousel-3">‹</label>
+                <label class="control-1 absolute right-0 mr-2 cursor-pointer hidden text-3xl font-bold text-black hover:text-white" for="carousel-2">›</label>
+                
+                <input aria-hidden="true" class="carousel-open" hidden="" id="carousel-2" name="carousel" type="radio"/>
+                <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                    <img alt="Comedian interacting with the audience during a live show" class="w-full h-full object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/Xk9AEWEgeuPzUF40X3ivXTraOnAysGLF6ZE8E5v6SIM.jpg" width="800"/>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white">
+                        <h2 class="text-4xl font-bold">LaughLink</h2>
+                        <p class="text-xl mt-2">Laugh more, search less</p>
+                    </div>
+                </div>
+                <label class="control-2 absolute right-0 mr-2 cursor-pointer hidden text-3xl font-bold text-black hover:text-white" for="carousel-1">‹</label>
+                <label class="control-2 absolute right-0 mr-2 cursor-pointer hidden text-3xl font-bold text-black hover:text-white" for="carousel-3">›</label>
+                
+                <input aria-hidden="true" class="carousel-open" hidden="" id="carousel-3" name="carousel" type="radio"/>
+                <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                    <img alt="Audience clapping and enjoying a comedy performance" class="w-full h-full object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/KCj6_DrC7gXIc1w9Sm3FH8bcKMql3yvQGv6SYp3AW0E.jpg" width="800"/>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white">
+                        <h2 class="text-4xl font-bold">LaughLink</h2>
+                        <p class="text-xl mt-2">Laugh more, search less</p>
+                    </div>
+                </div>
+                <label class="control-3 absolute right-0 mr-2 cursor-pointer hidden text-3xl font-bold text-black hover:text-white" for="carousel-2">‹</label>
+                <label class="control-3 absolute right-0 mr-2 cursor-pointer hidden text-3xl font-bold text-black hover:text-white" for="carousel-1">›</label>
+                
+                <ol class="carousel-indicators">
+                    <li class="inline-block mr-3">
+                        <label class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900" for="carousel-1">•</label>
+                    </li>
+                    <li class="inline-block mr-3">
+                        <label class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900" for="carousel-2">•</label>
+                    </li>
+                    <li class="inline-block mr-3">
+                        <label class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900" for="carousel-3">•</label>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <a class="block" href="audiencelogin.html">
+                <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-500 hover:scale-105 h-full">
+                    <img alt="Audience enjoying a comedy show" class="w-full h-60 object-cover rounded-lg mb-4" src="https://storage.googleapis.com/a1aa/image/JuOp3xfBvgNsSfQFjDFAI227nQAqynELQBvgHOjwQUA.jpg">
+                    <h2 class="text-xl font-bold mb-2">Audience</h2>
+                    <p class="text-gray-600">Join the audience and enjoy the best comedy shows live.</p>
+                </div>
+            </a>
+            
+            <a class="block" href="getstarted.html">
+                <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-500 hover:scale-105 h-full">
+                    <img alt="Comedian performing on stage" class="w-full h-60 object-cover rounded-lg mb-4" src="https://media.istockphoto.com/id/1461816749/photo/a-crowd-of-people-with-raised-arms-during-a-music-concert-with-an-amazing-light-show-black.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=-hdWCLDP5AI9A3mjq3JPMPKhXxJ2P1iItPDFktQHxX8=">
+                    <h2 class="text-xl font-bold mb-2">Comedian/Venue</h2>
+                    <p class="text-gray-600">Perform and showcase your talent to a live audience or find the perfect venue for your next comedy show.</p>
+                </div>
+            </a>
+        </div>
+    </main>
+    <footer class="bg-white shadow-md mt-8">
+        <div class="container mx-auto py-4 px-6 text-center text-gray-600">
+            © 2025 ComedyHub. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        
+        let currentIndex = 1;
+        setInterval(() => {
+            document.getElementById(`carousel-${currentIndex}`).checked = true;
+            currentIndex = currentIndex === 3 ? 1 : currentIndex + 1;
+        }, 3000); 
+    </script>
+</body>
 </html>
