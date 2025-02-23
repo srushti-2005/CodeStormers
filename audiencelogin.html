@@ -36,11 +36,11 @@
     </div>
 
     <script type="module">
-        // Import Firebase SDK
+        
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
     
-        // Firebase Config
+        
         const firebaseConfig = {
             apiKey: "AIzaSyD2ACYtYiHoKmwq2j1Xo502D9Bl_0wGiYw",
             authDomain: "comedyhub-ec416.firebaseapp.com",
@@ -50,11 +50,11 @@
             appId: "1:817016376852:web:a969a4520b5a3f78396101"
         };
     
-        // Initialize Firebase
+        
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
     
-        // Handle Login
+        
         document.getElementById("loginForm").addEventListener("submit", function (e) {
             e.preventDefault();
     
@@ -64,7 +64,7 @@
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     alert("Login Successful!");
-                    window.location.href = "audience.html"; // Redirect on success
+                    window.location.href = "usermain.html"; 
                 })
                 .catch((error) => {
                     console.error("Firebase Login Error:", error.code, error.message);
